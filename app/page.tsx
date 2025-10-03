@@ -191,8 +191,8 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
                 <img
-                  src="/drapaulaped/drapaulaandrade.webp"
-                  alt="Dra. Paula Andrade - Pediatra especializada em pediatria humanizada e integrativa"
+                  src="/drapaulaped/drapaulaandrade-consultorio.jpg"
+                  alt="Consultório Dra. Paula Andrade - Pediatria Humanizada em Pinheiros"
                   className="w-full h-full object-cover"
                 />
               </div>
