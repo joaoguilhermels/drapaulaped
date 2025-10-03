@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 
 export default function Home() {
@@ -77,13 +76,10 @@ export default function Home() {
             {/* Image */}
             <div className="relative hidden lg:block">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/drapaulaandrade.webp"
+                <img
+                  src="/drapaulaped/drapaulaandrade.webp"
                   alt="Dra. Paula Andrade - Pediatra em Pinheiros"
-                  width={800}
-                  height={800}
                   className="w-full h-full object-cover"
-                  priority
                 />
               </div>
 
@@ -194,11 +190,9 @@ export default function Home() {
             {/* Image */}
             <div className="relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
-                <Image
-                  src="/drapaulaandrade.webp"
+                <img
+                  src="/drapaulaped/drapaulaandrade.webp"
                   alt="Dra. Paula Andrade - Pediatra especializada em pediatria humanizada e integrativa"
-                  width={800}
-                  height={600}
                   className="w-full h-full object-cover"
                 />
               </div>
