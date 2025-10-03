@@ -13,10 +13,6 @@ updates:
     labels:
       - "dependencies"
       - "security"
-    # Ignore Tailwind CSS v4 only (requires complete rewrite)
-    ignore:
-      - dependency-name: "tailwindcss"
-        update-types: ["version-update:semver-major"]
     # Group all patch updates together
     groups:
       patch-updates:
