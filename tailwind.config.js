@@ -112,11 +112,11 @@ module.exports = {
       },
       fontFamily: {
         // Font principal - Sans-serif moderna e profissional
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         // Font para títulos - Mais expressiva e elegante
-        display: ['Poppins', 'Inter', 'sans-serif'],
+        display: ['var(--font-poppins)', 'Poppins', 'Inter', 'sans-serif'],
         // Font para corpo de texto - Ótima legibilidade
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        body: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         // Escala tipográfica otimizada para legibilidade
