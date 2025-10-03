@@ -89,11 +89,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <head>
-        <StructuredData />
-      </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
+        <StructuredData />
       </body>
     </html>
   )
