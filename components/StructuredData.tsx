@@ -5,10 +5,10 @@ export default function StructuredData() {
     '@type': 'Physician',
     name: 'Dra. Paula Andrade',
     alternateName: 'Paula Andrade Pediatra',
-    description: 'Pediatra especializada em pediatria humanizada e integrativa em Pinheiros, São Paulo. Atendimento para crianças de 0 a 12 anos.',
+    description: 'Pediatra com RQE 131771 especializada em pediatria humanizada e integrativa em Pinheiros, São Paulo. Título SBP 2024, pós-graduação Einstein. Atendimento para crianças de 0 a 12 anos.',
     image: 'https://www.drapaulaandrade.com.br/dra-paula-andrade.jpg',
     url: 'https://www.drapaulaandrade.com.br',
-    telephone: '+55-11-99999-9999',
+    telephone: '+55-11-95454-8113',
     email: 'contato@drapaulaandrade.com.br',
     address: {
       '@type': 'PostalAddress',
@@ -44,8 +44,7 @@ export default function StructuredData() {
       },
     ],
     sameAs: [
-      'https://www.instagram.com/drapaulaandrade',
-      'https://www.facebook.com/drapaulaandrade',
+      'https://www.instagram.com/dra_paulandradeped',
     ],
   }
 
@@ -55,14 +54,14 @@ export default function StructuredData() {
     '@type': 'MedicalBusiness',
     '@id': 'https://www.drapaulaandrade.com.br',
     name: 'Dra. Paula Andrade - Pediatria',
-    description: 'Consultório de Pediatria Humanizada e Integrativa em Pinheiros, São Paulo. Atendimento especializado para crianças de 0 a 12 anos com mais de 15 anos de experiência.',
+    description: 'Consultório de Pediatria Humanizada e Integrativa em Pinheiros, São Paulo. Dra. Paula Andrade, RQE 131771, título SBP 2024, pós-graduação Einstein. Atendimento especializado para crianças de 0 a 12 anos com 7 anos de experiência.',
     url: 'https://www.drapaulaandrade.com.br',
     logo: 'https://www.drapaulaandrade.com.br/logo.png',
     image: [
       'https://www.drapaulaandrade.com.br/consultorio-1.jpg',
       'https://www.drapaulaandrade.com.br/consultorio-2.jpg',
     ],
-    telephone: '+55-11-99999-9999',
+    telephone: '+55-11-95454-8113',
     email: 'contato@drapaulaandrade.com.br',
     address: {
       '@type': 'PostalAddress',
@@ -139,9 +138,9 @@ export default function StructuredData() {
     '@type': 'LocalBusiness',
     '@id': 'https://www.drapaulaandrade.com.br#localbusiness',
     name: 'Dra. Paula Andrade - Pediatria Humanizada',
-    description: 'Pediatra em Pinheiros com mais de 15 anos de experiência. Atendimento humanizado e integrativo para crianças de 0 a 12 anos.',
+    description: 'Pediatra em Pinheiros (RQE 131771) com 7 anos de experiência. Título SBP 2024, pós-graduação Einstein. Atendimento humanizado e integrativo para crianças de 0 a 12 anos.',
     url: 'https://www.drapaulaandrade.com.br',
-    telephone: '+5511999999999',
+    telephone: '+5511954548113',
     email: 'contato@drapaulaandrade.com.br',
     priceRange: '$$',
     image: {
@@ -175,8 +174,7 @@ export default function StructuredData() {
       reviewCount: '127',
     },
     sameAs: [
-      'https://www.instagram.com/drapaulaandrade',
-      'https://www.facebook.com/drapaulaandrade',
+      'https://www.instagram.com/dra_paulandradeped',
     ],
   }
 

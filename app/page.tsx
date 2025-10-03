@@ -6,7 +6,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       {/* WhatsApp Floating Button */}
       <WhatsAppFloat
-        phoneNumber="5511999999999"
+        phoneNumber="5511954548113"
         message="Olá! Gostaria de agendar uma consulta pediátrica."
         position="right"
       />
@@ -35,26 +35,26 @@ export default function Home() {
                   <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
-                  <span>CRM-SP 123.456</span>
+                  <span>Pediatria RQE 131771</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
-                  <span>Pediatra SBP</span>
+                  <span>Título SBP 2024</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
-                  <span>15+ anos de experiência</span>
+                  <span>Pós-graduação Einstein</span>
                 </div>
               </div>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
-                  href="https://wa.me/5511999999999"
+                  href="https://wa.me/5511954548113"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold rounded-lg shadow-whatsapp hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-whatsapp focus:ring-offset-2 active:scale-95"
@@ -206,13 +206,13 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-neutral-700 text-lg leading-relaxed">
                 <p>
-                  Pediatra com mais de 15 anos de experiência, dedicada ao cuidado integral e humanizado de crianças de 0 a 12 anos.
+                  Nascida em Minas Gerais e mãe da Manuela, minha vocação sempre foi cuidar e ajudar o próximo. Sou formada em Medicina pela Faculdade Atenas em 2016 e me mudei para São Paulo há 6 anos.
                 </p>
                 <p>
-                  Mãe e mineira, traz em sua prática uma abordagem acolhedora e integrativa, unindo o melhor da medicina tradicional com práticas complementares.
+                  Com mais de 7 anos de experiência pediátrica em consultório e pronto-socorro, obtive o título de Pediatra pela Sociedade Brasileira de Pediatria (SBP) em 2024 e pós-graduação em pediatria pelo Instituto Israelita Albert Einstein.
                 </p>
                 <p>
-                  Atendo em consultório moderno e acolhedor em Pinheiros, São Paulo, oferecendo consultas presenciais e telemedicina para maior comodidade das famílias.
+                  Realizei diversos cursos focados em pediatria integrativa, prevenção de doenças e suplementação pediátrica. Estou comprometida em oferecer sempre o meu melhor, com atendimento humanizado, conhecimento atualizado e cuidado personalizado.
                 </p>
               </div>
 
@@ -225,8 +225,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-neutral-900">CRM-SP 123.456</p>
-                    <p className="text-sm text-neutral-600">Registro ativo</p>
+                    <p className="font-semibold text-neutral-900">Pediatria RQE 131771</p>
+                    <p className="text-sm text-neutral-600">Registro de Qualificação de Especialista</p>
                   </div>
                 </div>
 
@@ -237,7 +237,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-neutral-900">Título SBP</p>
+                    <p className="font-semibold text-neutral-900">Título SBP 2024</p>
                     <p className="text-sm text-neutral-600">Sociedade Brasileira de Pediatria</p>
                   </div>
                 </div>
@@ -249,8 +249,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-neutral-900">Especialização</p>
-                    <p className="text-sm text-neutral-600">Pediatria Integrativa</p>
+                    <p className="font-semibold text-neutral-900">Pós-graduação Einstein</p>
+                    <p className="text-sm text-neutral-600">Instituto Israelita Albert Einstein</p>
                   </div>
                 </div>
 
@@ -261,8 +261,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-neutral-900">Localização</p>
-                    <p className="text-sm text-neutral-600">Pinheiros, São Paulo</p>
+                    <p className="font-semibold text-neutral-900">7 anos de experiência</p>
+                    <p className="text-sm text-neutral-600">Consultório e Pronto-Socorro</p>
                   </div>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5511954548113"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 active:scale-95"
@@ -294,7 +294,7 @@ export default function Home() {
                 Agendar via WhatsApp
               </a>
               <a
-                href="tel:+5511999999999"
+                href="tel:+5511954548113"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-neutral-50 text-primary-600 hover:text-primary-700 font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600 active:scale-95"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -354,7 +354,7 @@ export default function Home() {
                   <svg className="w-5 h-5 mt-0.5 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                   </svg>
-                  <span>(11) 99999-9999</span>
+                  <span>(11) 95454-8113</span>
                 </li>
               </ul>
             </div>

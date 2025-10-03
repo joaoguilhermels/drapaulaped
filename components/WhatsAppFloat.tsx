@@ -9,7 +9,7 @@ interface WhatsAppFloatProps {
 }
 
 export default function WhatsAppFloat({
-  phoneNumber = '5511999999999',
+  phoneNumber = '5511954548113',
   message = 'Olá! Gostaria de agendar uma consulta.',
   position = 'right'
 }: WhatsAppFloatProps) {
