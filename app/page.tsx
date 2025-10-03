@@ -1,8 +1,15 @@
 import Link from 'next/link'
+import WhatsAppFloat from '@/components/WhatsAppFloat'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
+      {/* WhatsApp Floating Button */}
+      <WhatsAppFloat
+        phoneNumber="5511999999999"
+        message="Olá! Gostaria de agendar uma consulta pediátrica."
+        position="right"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
         {/* Decorative Background */}

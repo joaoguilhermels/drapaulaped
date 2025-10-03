@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
+import StructuredData from '@/components/StructuredData'
 import './globals.css'
 
 const inter = Inter({
@@ -88,6 +89,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
+      <head>
+        <StructuredData />
+      </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
       </body>
