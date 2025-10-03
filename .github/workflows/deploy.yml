@@ -44,6 +44,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install SWC binary
+        run: npm install --no-save @next/swc-linux-x64-gnu
+
       - name: Build with Next.js
         run: npm run build
 
