@@ -4,9 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Uncomment and configure basePath if deploying to a repository path
-  // basePath: '/repository-name',
-  // assetPrefix: '/repository-name/',
+  basePath: '/drapaulaped',
+  assetPrefix: '/drapaulaped/',
   trailingSlash: true,
 }
 
