@@ -73,15 +73,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Image Placeholder */}
+            {/* Image */}
             <div className="relative hidden lg:block">
-              <div className="aspect-square bg-gradient-to-br from-primary-200 to-secondary-200 rounded-3xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center text-neutral-400">
-                  {/* Placeholder para foto da Dra. Paula */}
-                  <svg className="w-48 h-48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                  </svg>
-                </div>
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/drapaulaandrade.webp"
+                  alt="Dra. Paula Andrade - Pediatra em Pinheiros"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Floating Badge */}
@@ -190,12 +189,12 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
             <div className="relative">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary-200 to-secondary-200 rounded-3xl overflow-hidden shadow-xl">
-                <div className="w-full h-full flex items-center justify-center text-neutral-400">
-                  <svg className="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                  </svg>
-                </div>
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+                <img
+                  src="/drapaulaandrade.webp"
+                  alt="Dra. Paula Andrade - Pediatra especializada em pediatria humanizada e integrativa"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 

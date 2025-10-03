@@ -6,7 +6,7 @@ export default function StructuredData() {
     name: 'Dra. Paula Andrade',
     alternateName: 'Paula Andrade Pediatra',
     description: 'Pediatra com RQE 131771 especializada em pediatria humanizada e integrativa em Pinheiros, São Paulo. Título SBP 2024, pós-graduação Einstein. Atendimento para crianças de 0 a 12 anos.',
-    image: 'https://www.drapaulaandrade.com.br/dra-paula-andrade.jpg',
+    image: 'https://joaoguilhermels.github.io/drapaulaped/drapaulaandrade.webp',
     url: 'https://www.drapaulaandrade.com.br',
     telephone: '+55-11-95454-8113',
     email: 'contato@drapaulaandrade.com.br',
@@ -58,8 +58,7 @@ export default function StructuredData() {
     url: 'https://www.drapaulaandrade.com.br',
     logo: 'https://www.drapaulaandrade.com.br/logo.png',
     image: [
-      'https://www.drapaulaandrade.com.br/consultorio-1.jpg',
-      'https://www.drapaulaandrade.com.br/consultorio-2.jpg',
+      'https://joaoguilhermels.github.io/drapaulaped/drapaulaandrade.webp',
     ],
     telephone: '+55-11-95454-8113',
     email: 'contato@drapaulaandrade.com.br',
@@ -145,7 +144,7 @@ export default function StructuredData() {
     priceRange: '$$',
     image: {
       '@type': 'ImageObject',
-      url: 'https://www.drapaulaandrade.com.br/og-image.jpg',
+      url: 'https://joaoguilhermels.github.io/drapaulaped/drapaulaandrade.webp',
     },
     address: {
       '@type': 'PostalAddress',

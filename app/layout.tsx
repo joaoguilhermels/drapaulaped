@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     description: 'Pediatra em Pinheiros (RQE 131771), São Paulo. Atendimento humanizado e integrativo. Título SBP 2024, pós-graduação Einstein. 7 anos de experiência. Consulta em 24-48h.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/drapaulaandrade.webp',
         width: 1200,
         height: 630,
         alt: 'Dra. Paula Andrade - Pediatra em Pinheiros',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dra. Paula Andrade - Pediatra em Pinheiros',
     description: 'Pediatra em Pinheiros (RQE 131771), São Paulo. Atendimento humanizado e integrativo. Título SBP 2024, pós-graduação Einstein.',
-    images: ['/og-image.jpg'],
+    images: ['/drapaulaandrade.webp'],
   },
   robots: {
     index: true,
