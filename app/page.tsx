@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
+import ObfuscatedEmail from '@/components/ObfuscatedEmail'
 
 export default function Home() {
   return (
@@ -347,7 +348,11 @@ export default function Home() {
                   <svg className="w-5 h-5 mt-0.5 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
-                  <span>contato@drapaulaandrade.com.br</span>
+                  <ObfuscatedEmail
+                    user="contato"
+                    domain="drapaulaandrade.com.br"
+                    className="hover:text-primary-400 transition-colors"
+                  />
                 </li>
                 <li className="flex items-start gap-2 text-neutral-300">
                   <svg className="w-5 h-5 mt-0.5 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

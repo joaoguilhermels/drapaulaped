@@ -1,0 +1,12 @@
+# robots.txt for Dra. Paula Andrade - Pediatria
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Crawl-delay to prevent server overload
+Crawl-delay: 1
+
+# Sitemap location (update when sitemap is created)
+# Sitemap: https://joaoguilhermels.github.io/drapaulaped/sitemap.xml

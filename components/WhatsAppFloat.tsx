@@ -34,6 +34,17 @@ export default function WhatsAppFloat({
   }, [])
 
   const handleClick = () => {
+    // Rate limiting: prevent spam clicks
+    const lastClick = localStorage.getItem('wa-last-click')
+    const now = Date.now()
+
+    if (lastClick && now - parseInt(lastClick) < 3000) {
+      // Prevent clicking more than once every 3 seconds
+      return
+    }
+
+    localStorage.setItem('wa-last-click', now.toString())
+
     const encodedMessage = encodeURIComponent(message)
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer')

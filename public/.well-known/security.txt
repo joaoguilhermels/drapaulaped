@@ -1,0 +1,8 @@
+Contact: mailto:contato@drapaulaandrade.com.br
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://joaoguilhermels.github.io/drapaulaped/.well-known/security.txt
+
+# Security Policy
+# Please report security vulnerabilities responsibly
+# We will respond within 48 hours
