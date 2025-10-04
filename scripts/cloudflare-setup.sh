@@ -145,7 +145,7 @@ curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/rulesets/p
                     },
                     "Permissions-Policy": {
                         "operation": "set",
-                        "value": "geolocation=(), microphone=(), camera=()"
+                        "value": "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
                     }
                 }
             },
