@@ -3,6 +3,7 @@ import WhatsAppFloat from '@/components/WhatsAppFloat'
 import ObfuscatedEmail from '@/components/ObfuscatedEmail'
 import FAQ from '@/components/FAQ'
 import Testimonials from '@/components/Testimonials'
+import LimitedAvailability from '@/components/LimitedAvailability'
 
 export default function Home() {
   return (
@@ -221,17 +222,47 @@ export default function Home() {
             {/* Content */}
             <div className="space-y-6">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-neutral-900">
-                Dra. Paula Andrade
+                Por que me tornei pediatra integrativa
               </h2>
               <div className="space-y-4 text-neutral-700 text-lg leading-relaxed">
                 <p>
-                  Nascida em Minas Gerais e mãe da Manuela, minha vocação sempre foi cuidar e ajudar o próximo. Sou formada em Medicina pela Faculdade Atenas em 2016 e me mudei para São Paulo há 6 anos.
+                  Sou Paula, mineira de coração, paulistana de escolha, e mãe da Manuela.
                 </p>
                 <p>
-                  Com mais de 7 anos de experiência pediátrica em consultório e pronto-socorro, obtive o título de Pediatra pela Sociedade Brasileira de Pediatria (SBP) em 2024 e pós-graduação em pediatria pelo Instituto Israelita Albert Einstein.
+                  Quando me formei em Medicina em 2016, achava que ser boa pediatra era sobre diagnósticos rápidos e prescrições certeiras. Sete anos de consultório e pronto-socorro me ensinaram diferente.
                 </p>
                 <p>
-                  Realizei diversos cursos focados em pediatria integrativa, prevenção de doenças e suplementação pediátrica. Estou comprometida em oferecer sempre o meu melhor, com atendimento humanizado, conhecimento atualizado e cuidado personalizado.
+                  Vi mães sendo dispensadas em 5 minutos com uma receita na mão, mas sem suas dúvidas respondidas. Vi crianças tratadas como &ldquo;casos&rdquo;, não como pessoas únicas. E quando me tornei mãe, vivi na pele a angústia de não ser ouvida.
+                </p>
+                <p className="font-semibold text-primary-700">
+                  Foi aí que decidi: meu consultório seria diferente.
+                </p>
+                <p>
+                  Busquei o título de especialista pela SBP, fiz pós-graduação no Einstein, mergulhei em pediatria integrativa. Mas o mais importante? Aprendi a ESCUTAR.
+                </p>
+                <div className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded-r-lg">
+                  <p className="font-semibold text-neutral-900 mb-3">Hoje, cada consulta aqui é um espaço seguro onde:</p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-600 font-bold">→</span>
+                      <span>Suas perguntas nunca são &ldquo;bobas&rdquo;</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-600 font-bold">→</span>
+                      <span>Tratamos a criança inteira, não só os sintomas</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-600 font-bold">→</span>
+                      <span>Unimos o melhor da medicina com práticas integrativas</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary-600 font-bold">→</span>
+                      <span>Você sai com um plano claro e a tranquilidade de estar fazendo o melhor pelo seu filho</span>
+                    </li>
+                  </ul>
+                </div>
+                <p className="text-xl font-display font-semibold text-primary-800 italic">
+                  Porque pediatria humanizada não é sobre ser &ldquo;boazinha&rdquo;. É sobre competência com empatia. Ciência com coração.
                 </p>
               </div>
 
@@ -292,6 +323,9 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Limited Availability Section */}
+      <LimitedAvailability />
 
       {/* FAQ Section */}
       <FAQ />
