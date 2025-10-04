@@ -19,6 +19,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'Dra. Paula Andrade - Pediatra em Pinheiros | Pediatria Humanizada e Integrativa',
   description: 'Pediatra em Pinheiros, São Paulo (RQE 131771). Atendimento humanizado e integrativo para crianças de 0 a 12 anos. Título SBP 2024, pós-graduação Einstein. 7 anos de experiência. Agende via WhatsApp.',
+  icons: {
+    icon: '/drapaulaped/favicon.svg',
+  },
   keywords: [
     'pediatra pinheiros',
     'pediatra em pinheiros',
