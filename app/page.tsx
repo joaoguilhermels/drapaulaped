@@ -145,10 +145,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="font-display text-xl font-semibold text-neutral-900 mb-2">
-                Consulta Pediátrica
+                Consultas completas onde tiramos todas as suas dúvidas
               </h3>
               <p className="text-neutral-600 mb-4">
-                Acompanhamento completo do crescimento e desenvolvimento, com foco em prevenção e promoção da saúde.
+                Não tenha medo de perguntar demais. Aqui, cada consulta tem tempo para avaliar crescimento, desenvolvimento, tirar dúvidas sobre alimentação, sono e comportamento. Você sai com orientações claras e um plano de cuidados personalizado.
               </p>
               <a href="#contato" className="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center gap-1 group">
                 Saiba mais
@@ -166,10 +166,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="font-display text-xl font-semibold text-neutral-900 mb-2">
-                Puericultura
+                Do recém-nascido ao escolar: acompanhamento em cada fase
               </h3>
               <p className="text-neutral-600 mb-4">
-                Cuidado integral desde o nascimento, com orientações sobre alimentação, sono e desenvolvimento.
+                Os primeiros anos são cheios de dúvidas (e isso é normal!). Oferecemos puericultura completa com foco em: amamentação, introdução alimentar, marcos de desenvolvimento, vacinação e prevenção. Pais seguros criam filhos saudáveis.
               </p>
               <a href="#contato" className="text-secondary-600 hover:text-secondary-700 font-medium inline-flex items-center gap-1 group">
                 Saiba mais
@@ -187,10 +187,10 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="font-display text-xl font-semibold text-neutral-900 mb-2">
-                Pediatria Integrativa
+                O melhor da medicina + práticas integrativas
               </h3>
               <p className="text-neutral-600 mb-4">
-                Abordagem holística que une medicina tradicional e práticas complementares para o bem-estar infantil.
+                Combinamos diagnóstico preciso com olhar integrativo: fitoterapia, suplementação baseada em evidências, orientação nutricional e práticas que fortalecem a saúde como um todo. Menos remédios quando possível, mais saúde sempre.
               </p>
               <a href="#contato" className="text-accent-600 hover:text-accent-700 font-medium inline-flex items-center gap-1 group">
                 Saiba mais
