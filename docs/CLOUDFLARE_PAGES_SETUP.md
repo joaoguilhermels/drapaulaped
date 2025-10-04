@@ -1,14 +1,14 @@
 # Configuração Cloudflare Pages - Produção
 
 **Data:** 04/10/2025
-**URL Produção:** https://www.drapaulaped.com.br
-**URL Staging:** https://joaoguilhermels.github.io/drapaulaped/
+**URL Produção:** https://drapaulaped.com.br (apex domain)
+**URL www:** https://www.drapaulaped.com.br (redirect 301 → apex)
 
 ---
 
-## 📊 Arquitetura Dual
+## 📊 Arquitetura Cloudflare Pages
 
-Este projeto usa dois ambientes de deploy:
+Este projeto usa Cloudflare Pages como plataforma principal:
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -19,46 +19,58 @@ Este projeto usa dois ambientes de deploy:
        │ GitHub Actions │
        └───────┬────────┘
                │
-      ┌────────┴────────┐
-      │                 │
-┌─────▼──────┐    ┌────▼──────────┐
-│  deploy.yml│    │ cloudflare-   │
-│            │    │ production.yml│
-└─────┬──────┘    └────┬──────────┘
-      │                │
-┌─────▼──────┐    ┌────▼──────────┐
-│   Build    │    │    Build      │
-│ (basePath) │    │ (sem basePath)│
-└─────┬──────┘    └────┬──────────┘
-      │                │
-┌─────▼──────┐    ┌────▼──────────┐
-│  GitHub    │    │  Cloudflare   │
-│   Pages    │    │    Pages      │
-└─────┬──────┘    └────┬──────────┘
-      │                │
-┌─────▼──────────────────▼──────────┐
-│ joao...io/drapaulaped  (staging)  │
-│ www.drapaulaped.com.br (prod)     │
-└───────────────────────────────────┘
+       ┌───────▼────────┐
+       │ cloudflare-    │
+       │ production.yml │
+       └───────┬────────┘
+               │
+       ┌───────▼────────┐
+       │ Build (root)   │
+       │ sem basePath   │
+       └───────┬────────┘
+               │
+       ┌───────▼────────┐
+       │  Cloudflare    │
+       │    Pages       │
+       └───────┬────────┘
+               │
+       ┌───────▼────────────────────────┐
+       │ drapaulaped.com.br (apex)      │
+       │ www → 301 redirect to apex     │
+       └────────────────────────────────┘
 ```
 
 ---
 
 ## ✅ O Que Já Está Configurado
 
-### 1. Next.js Config Condicional
+### 1. Next.js Config Simplificado
 ```javascript
 // next.config.js
-const isProduction = process.env.CLOUDFLARE_ENV === 'production'
-// basePath só é usado quando NÃO é production
+const nextConfig = {
+  output: 'export',
+  images: { unoptimized: true },
+  trailingSlash: true,
+}
+// Sem basePath - Cloudflare serve da raiz
 ```
 
 ### 2. GitHub Actions Workflow
-- **`.github/workflows/deploy.yml`** → GitHub Pages (staging)
-- **`.github/workflows/cloudflare-production.yml`** → Cloudflare Pages (production)
+- **`.github/workflows/cloudflare-production.yml`** → Deploy automático para Cloudflare Pages
 
-### 3. Environment Variables
-- `.env.example` atualizado com variáveis para ambos ambientes
+### 3. DNS Configuration
+- **Apex domain (drapaulaped.com.br)** → CNAME drapaulaped.pages.dev
+- **www subdomain** → CNAME drapaulaped.pages.dev + Page Rule 301 redirect
+- **staging subdomain** → CNAME drapaulaped.pages.dev
+
+### 4. Cloudflare Automation Scripts
+- **`scripts/cloudflare-functions.sh`** → Funções helper para API
+- **`scripts/setup-dns.sh`** → Configuração DNS automatizada
+- **`scripts/create-redirect-rule.sh`** → Page Rule www → apex
+- **`scripts/cloudflare-setup.sh`** → Setup completo (SSL, Performance, Security, Cache)
+
+### 5. Environment Variables
+- `.env.example` configurado com apex domain
 
 ---
 
@@ -129,9 +141,7 @@ Build settings:
 
 | Variable Name | Value | Encrypt? |
 |---------------|-------|----------|
-| `CLOUDFLARE_ENV` | `production` | No |
-| `NEXT_PUBLIC_SITE_URL` | `https://www.drapaulaped.com.br` | No |
-| `NEXT_PUBLIC_ENV` | `production` | No |
+| `NEXT_PUBLIC_SITE_URL` | `https://drapaulaped.com.br` | No |
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | `G-63WNLD61E3` | No |
 
 3. Clique em **Save**
@@ -165,13 +175,33 @@ Secret: 3EHdZ_Sns6Rh2zpj4pKoEdTBrlOy0pBj_herejI6
 
 ### Passo 6: Configurar Custom Domain
 
+#### Opção A: Configuração Manual via Dashboard
+
 1. No Cloudflare Pages projeto → **Custom domains**
 2. Clique em **Set up a custom domain**
-3. Digite: `www.drapaulaped.com.br`
+3. Digite: `drapaulaped.com.br` (apex domain)
 4. Cloudflare irá:
    - Detectar se domínio está no Cloudflare
    - Criar registro DNS automaticamente
    - Configurar SSL/TLS
+
+#### Opção B: Configuração Automatizada via Scripts (Recomendado)
+
+Se o domínio já está no Cloudflare:
+
+```bash
+# 1. Configurar DNS (apex, www, staging)
+CLOUDFLARE_API_TOKEN="seu_token" ./scripts/setup-dns.sh
+
+# 2. Criar redirect www → apex
+CLOUDFLARE_API_TOKEN="seu_token" ./scripts/create-redirect-rule.sh
+
+# 3. Setup completo (SSL, Performance, Security, Cache)
+CLOUDFLARE_API_TOKEN="seu_token" ./scripts/cloudflare-setup.sh
+
+# (Opcional) Configurar email routing
+DESTINATION_EMAIL="seu@email.com" CLOUDFLARE_API_TOKEN="seu_token" ./scripts/cloudflare-setup.sh
+```
 
 #### Se o Domínio Ainda Não Está no Cloudflare:
 
@@ -187,32 +217,69 @@ Secret: 3EHdZ_Sns6Rh2zpj4pKoEdTBrlOy0pBj_herejI6
 6. **Alterar nameservers** para os fornecidos pelo Cloudflare
 7. Aguardar propagação DNS (5min - 48h, geralmente < 1h)
 
-#### Configurar DNS Records:
+#### DNS Records Configurados:
 
-Após domínio estar no Cloudflare:
+```
+Type: CNAME
+Name: @ (apex)
+Target: drapaulaped.pages.dev
+Proxy: ✅ Proxied
 
-1. DNS → Records
-2. Cloudflare Pages cria automaticamente:
-   ```
-   Type: CNAME
-   Name: www
-   Target: drapaulaped.pages.dev
-   Proxy: ✅ Proxied (laranja)
-   ```
+Type: CNAME
+Name: www
+Target: drapaulaped.pages.dev
+Proxy: ✅ Proxied
 
-3. **(Opcional) Redirect apex domain:**
-   ```
-   Type: A
-   Name: @
-   Target: 192.0.2.1
-   Proxy: ✅ Proxied
+Type: CNAME
+Name: staging
+Target: drapaulaped.pages.dev
+Proxy: ✅ Proxied
+```
 
-   + Page Rule redirect @ → www
-   ```
+#### Page Rule - www Redirect:
+
+```
+URL: www.drapaulaped.com.br/*
+Action: Forwarding URL (301 Permanent)
+Destination: https://drapaulaped.com.br/$1
+Priority: 1
+```
 
 ---
 
-### Passo 7: Trigger First Deploy
+### Passo 7: Configurar Web Analytics (Manual)
+
+**IMPORTANTE:** Web Analytics não pode ser criado via API Token. Configure manualmente:
+
+1. Acesse: https://dash.cloudflare.com/ → **Analytics & Logs** → **Web Analytics**
+2. Clique em **Add a site**
+3. Configure:
+   ```
+   Hostname: drapaulaped.com.br
+   Automatic setup: OFF (usaremos script manual)
+   ```
+4. Copie o **Web Analytics Token** gerado
+5. Adicione ao `app/layout.tsx` dentro do `<head>`:
+   ```tsx
+   <script
+     defer
+     src='https://static.cloudflareinsights.com/beacon.min.js'
+     data-cf-beacon='{"token": "SEU_TOKEN_AQUI"}'
+   />
+   ```
+
+**Alternativa via MCP Cloudflare:**
+
+Se preferir usar o MCP server do Cloudflare (recomendado):
+
+```
+"Use cloudflare-observability para criar um Web Analytics site para drapaulaped.com.br
+e me retorne o token para adicionar ao HTML"
+```
+
+---
+
+### Passo 8: Trigger First Deploy
 
 #### Via GitHub (Automático)
 
@@ -254,19 +321,28 @@ Deve mostrar:
 
 ### 2. Testar URLs
 
-**Staging (GitHub Pages):**
+**Production (Apex Domain):**
 ```
-https://joaoguilhermels.github.io/drapaulaped/
-```
-- Deve carregar com basePath `/drapaulaped/`
-- Links: `/drapaulaped/blog/`
-
-**Production (Cloudflare Pages):**
-```
-https://www.drapaulaped.com.br
+https://drapaulaped.com.br
 ```
 - Deve carregar da raiz `/`
-- Links: `/blog/`
+- Links: `/blog/`, `/sobre/`, etc.
+- SSL/TLS ativo
+- Performance otimizada
+
+**www Redirect:**
+```bash
+curl -I https://www.drapaulaped.com.br
+# Deve retornar:
+# HTTP/2 301
+# location: https://drapaulaped.com.br/
+```
+
+**Staging (Preview):**
+```
+https://staging.drapaulaped.com.br
+```
+- Branch staging ou preview deployments
 
 ### 3. Verificar Google Analytics
 
@@ -277,18 +353,39 @@ https://www.drapaulaped.com.br
 
 ---
 
-## 📊 Comparação: Staging vs Production
+## 📊 Cloudflare Pages - Configurações Aplicadas
 
-| Característica | Staging (GitHub Pages) | Production (Cloudflare) |
-|----------------|------------------------|-------------------------|
-| **URL** | joaoguilhermels.github.io/drapaulaped/ | www.drapaulaped.com.br |
-| **basePath** | `/drapaulaped/` | `/` (raiz) |
-| **Deploy** | Automático (main push) | Automático (main push) |
-| **Build Time** | ~2-3 min | ~1-2 min |
-| **SSL** | GitHub grátis | Cloudflare grátis |
-| **CDN** | GitHub global | Cloudflare 300+ POPs |
-| **Analytics** | Filtrar por hostname | Filtrar por hostname |
-| **Custo** | Grátis | Grátis (500 builds/mês) |
+### SSL/TLS
+- ✅ SSL Mode: Full (Strict)
+- ✅ Always Use HTTPS
+- ✅ TLS 1.3 enabled
+- ✅ Automatic HTTPS Rewrites
+- ✅ Universal SSL Certificate (grátis)
+
+### Performance
+- ✅ Auto Minify (JS, CSS, HTML)
+- ✅ Brotli Compression
+- ✅ HTTP/3 (QUIC)
+- ✅ Early Hints
+- ✅ 0-RTT Connection Resumption
+- ✅ Tiered Cache
+
+### Security
+- ✅ Bot Fight Mode
+- ✅ Browser Integrity Check
+- ✅ Security Headers (X-Content-Type-Options, X-Frame-Options, etc.)
+- ✅ Security Level: Medium
+- ✅ DDoS Protection (sempre ativo)
+
+### Caching
+- ✅ Browser Cache TTL: 4 hours
+- ✅ Cache Level: Aggressive
+- ✅ Smart Tiered Cache topology
+
+### Analytics & Monitoring
+- ✅ Cloudflare Web Analytics (configurar token manualmente)
+- ✅ Google Analytics 4: G-63WNLD61E3
+- ✅ Real User Monitoring (RUM)
 
 ---
 
@@ -408,10 +505,8 @@ Hostname = joaoguilhermels.github.io
 # 1. Desenvolvimento local
 npm run dev
 
-# 2. Testar build (simula staging)
+# 2. Testar build
 npm run build
-# ou testar production:
-CLOUDFLARE_ENV=production npm run build
 
 # 3. Commit e push
 git add .
@@ -419,22 +514,78 @@ git commit -m "feat: nova funcionalidade"
 git push origin main
 
 # 4. GitHub Actions roda automaticamente
-# → deploy.yml (GitHub Pages - staging)
-# → cloudflare-production.yml (Cloudflare - production)
+# → cloudflare-production.yml (Cloudflare Pages)
 
 # 5. Verificar status
-gh run list --limit 2
+gh run list --limit 1
 gh run watch  # Acompanhar em tempo real
 
-# 6. Testar ambientes
-# Staging: https://joaoguilhermels.github.io/drapaulaped/
-# Production: https://www.drapaulaped.com.br
+# 6. Testar produção
+# https://drapaulaped.com.br
 
 # 7. Verificar analytics
-# GA4 Tempo Real → Ver tráfego
+# - GA4 Tempo Real
+# - Cloudflare Web Analytics
 
-# 8. Monitorar erros (via MCP)
-"Mostre erros das últimas 2h no Cloudflare Pages drapaulaped"
+# 8. Monitorar via MCP (Recomendado)
+# Use o MCP server ao invés de scripts bash quando possível
+```
+
+---
+
+## 🤖 Usando MCP Cloudflare (Recomendado)
+
+**IMPORTANTE:** Sempre prefira usar o MCP server do Cloudflare ao invés da API direta.
+
+### MCP Servers Disponíveis:
+
+1. **cloudflare-docs** → Documentação e guias
+2. **cloudflare-bindings** → Criar/gerenciar projetos
+3. **cloudflare-builds** → Monitorar deploys
+4. **cloudflare-observability** → Analytics e logs
+5. **cloudflare-browser** → Testes automatizados
+
+### Exemplos de Uso:
+
+#### Monitorar Deploys
+```
+"Use cloudflare-builds para mostrar os últimos 5 deploys do projeto drapaulaped"
+```
+
+#### Ver Analytics
+```
+"Use cloudflare-observability para mostrar métricas das últimas 24h de drapaulaped.com.br"
+```
+
+#### Criar Web Analytics
+```
+"Use cloudflare-observability para criar um Web Analytics site para drapaulaped.com.br
+e me retorne o token"
+```
+
+#### Monitorar Erros
+```
+"Use cloudflare-observability para mostrar erros das últimas 2h no projeto drapaulaped"
+```
+
+#### Testar Performance
+```
+"Use cloudflare-browser para testar a performance de https://drapaulaped.com.br"
+```
+
+### Scripts Bash (Alternativa)
+
+Use apenas quando MCP não estiver disponível:
+
+```bash
+# Setup completo
+CLOUDFLARE_API_TOKEN="token" ./scripts/cloudflare-setup.sh
+
+# DNS
+CLOUDFLARE_API_TOKEN="token" ./scripts/setup-dns.sh
+
+# Redirect www → apex
+CLOUDFLARE_API_TOKEN="token" ./scripts/create-redirect-rule.sh
 ```
 
 ---
@@ -485,52 +636,100 @@ gh run watch  # Acompanhar em tempo real
 
 ## ✅ Checklist de Setup
 
-- [ ] Conta Cloudflare criada
-- [ ] Account ID obtido
-- [ ] Projeto Cloudflare Pages criado (`drapaulaped`)
-- [ ] Environment variables configuradas no Cloudflare
-- [ ] GitHub Secrets adicionados:
-  - [ ] `CLOUDFLARE_API_TOKEN`
-  - [ ] `CLOUDFLARE_ACCOUNT_ID`
-  - [ ] `NEXT_PUBLIC_GA_MEASUREMENT_ID`
-- [ ] Domínio `drapaulaped.com.br` adicionado ao Cloudflare
-- [ ] Nameservers atualizados no registrador
-- [ ] Custom domain `www.drapaulaped.com.br` configurado
-- [ ] SSL/TLS ativo (pode levar até 24h)
-- [ ] Primeiro deploy realizado com sucesso
-- [ ] Staging e Production acessíveis
-- [ ] Google Analytics rastreando ambos ambientes
-- [ ] MCP Cloudflare testado
+### Configuração Inicial
+- [x] Conta Cloudflare criada
+- [x] Account ID obtido
+- [x] Projeto Cloudflare Pages criado (`drapaulaped`)
+- [x] MCP Cloudflare configurado (`.mcp.json`, `.mcp.local.json`)
+- [x] Environment variables configuradas no Cloudflare
+- [x] GitHub Secrets adicionados:
+  - [x] `CLOUDFLARE_API_TOKEN`
+  - [x] `CLOUDFLARE_ACCOUNT_ID`
+  - [x] `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+
+### DNS e Domínio
+- [x] Domínio `drapaulaped.com.br` adicionado ao Cloudflare
+- [x] Nameservers atualizados no registrador
+- [x] DNS Records criados (apex, www, staging)
+- [x] Page Rule www → apex configurada
+- [x] SSL/TLS ativo (Universal SSL)
+
+### Cloudflare Otimizações
+- [x] SSL/TLS: Full Strict, TLS 1.3
+- [x] Performance: Minify, Brotli, HTTP/3, Early Hints
+- [x] Security: Bot Fight Mode, Security Headers
+- [x] Caching: Aggressive, Tiered Cache
+- [ ] Web Analytics token configurado (manual)
+- [ ] Email Routing configurado (opcional)
+
+### Deploy e Testes
+- [x] Primeiro deploy realizado com sucesso
+- [x] Produção acessível: https://drapaulaped.com.br
+- [x] Google Analytics 4 ativo
+- [ ] Cloudflare Web Analytics ativo
+- [ ] Lighthouse CI configurado
 
 ---
 
 ## 🎯 Próximos Passos
 
-1. **Configurar DNS** (se ainda não fez)
-2. **Primeiro deploy** via `git push`
-3. **Testar custom domain**
-4. **Configurar alertas** Cloudflare
-5. **Monitorar analytics** primeiros dias
-6. **Otimizar performance** (se necessário)
+### Imediato
+1. **Configurar Web Analytics** (manual via dashboard ou MCP)
+   - Obter token do Cloudflare Web Analytics
+   - Adicionar ao `app/layout.tsx`
+2. **Adicionar Lighthouse CI** ao workflow
+   - Performance monitoring automático
+   - Alertas de regressão
+
+### Opcional
+3. **Configurar Email Routing**
+   - contato@drapaulaped.com.br
+   - noreply@drapaulaped.com.br
+   - oi@drapaulaped.com.br
+4. **Configurar Alertas** Cloudflare
+   - Build failures
+   - Performance degradation
+   - Erros 5xx
+5. **Monitorar Analytics** primeiros 7 dias
+   - GA4 + Cloudflare Web Analytics
+   - Ajustar estratégia SEO baseado em dados
 
 ---
 
 **Última Atualização:** 04/10/2025
-**Status:** Setup completo, aguardando configuração manual do Cloudflare
-**Responsável:** Infraestrutura Dual Deploy
+**Status:** Setup Cloudflare completo - Apex domain ativo
+**Arquitetura:** Cloudflare Pages only (sem GitHub Pages)
+**MCP:** Configurado e recomendado para operações
 
 ---
 
-## 💡 Dica Final
+## 💡 Dicas Importantes
 
-**Teste antes de configurar domínio:**
-```bash
-# Ver build de production localmente
-CLOUDFLARE_ENV=production npm run build
-npx serve out -p 3001
-
-# Acessar: http://localhost:3001
-# Links devem ser sem /drapaulaped/
+### 1. Sempre use MCP quando possível
+```
+"Use cloudflare-observability para criar Web Analytics para drapaulaped.com.br"
 ```
 
-Isso garante que a configuração condicional está funcionando! ✅
+### 2. Teste localmente antes de deploy
+```bash
+npm run build
+npx serve out -p 3001
+# Links devem ser da raiz: /blog/, /sobre/
+```
+
+### 3. Monitore performance
+```bash
+# Via Lighthouse CI (após configurar)
+npm run lighthouse
+
+# Via MCP
+"Use cloudflare-browser para testar https://drapaulaped.com.br"
+```
+
+### 4. Apex domain é o principal
+- ✅ https://drapaulaped.com.br
+- 🔄 https://www.drapaulaped.com.br → 301 redirect
+
+---
+
+**Setup completo! 🎉**
