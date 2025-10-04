@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import ObfuscatedEmail from '@/components/ObfuscatedEmail'
+import FAQ from '@/components/FAQ'
+import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
   return (
@@ -24,20 +26,14 @@ export default function Home() {
             {/* Content */}
             <div className="space-y-6 text-center lg:text-left">
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight">
-                Pediatria Humanizada e Integrativa
+                Seu filho merece um pediatra que escuta, entende e cuida
               </h1>
               <p className="text-lg md:text-xl text-neutral-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Cuidado especializado e acolhedor para o desenvolvimento saudável do seu filho. Atendimento em Pinheiros, São Paulo.
+                Dra. Paula Andrade une 7 anos de experiência com abordagem integrativa e humanizada. Consultas sem pressa, diagnósticos precisos e orientação para cada fase do desenvolvimento. Atendimento em Pinheiros com agendamento em 24-48h.
               </p>
 
               {/* Trust Badges */}
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start text-sm text-neutral-600">
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                  <span>Pediatria RQE 131771</span>
-                </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -49,6 +45,12 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                   <span>Pós-graduação Einstein</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                  </svg>
+                  <span>Mãe que entende mães</span>
                 </div>
               </div>
 
@@ -287,6 +289,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
