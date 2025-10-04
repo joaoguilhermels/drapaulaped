@@ -1,6 +1,6 @@
 export default function StructuredData() {
   // Get base URL from environment variable or fallback to production
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.drapaulaped.com.br'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://drapaulaped.com.br'
 
   // Physician Schema
   const physicianSchema = {
@@ -129,7 +129,7 @@ export default function StructuredData() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.drapaulaandrade.com.br/',
+        item: `${baseUrl}/`,
       },
     ],
   }
@@ -138,16 +138,16 @@ export default function StructuredData() {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://www.drapaulaandrade.com.br#localbusiness',
+    '@id': `${baseUrl}#localbusiness`,
     name: 'Dra. Paula Andrade - Pediatria Humanizada',
     description: 'Pediatra em Pinheiros (RQE 131771) com 7 anos de experiência. Título SBP 2024, pós-graduação Einstein. Atendimento humanizado e integrativo para crianças de 0 a 12 anos.',
-    url: 'https://www.drapaulaandrade.com.br',
+    url: baseUrl,
     telephone: '+5511954548113',
     email: 'contato@drapaulaandrade.com.br',
     priceRange: '$$',
     image: {
       '@type': 'ImageObject',
-      url: 'https://drapaulaped.com.br/drapaulaandrade.webp',
+      url: `${baseUrl}/drapaulaandrade.webp`,
     },
     address: {
       '@type': 'PostalAddress',
@@ -201,25 +201,25 @@ export default function StructuredData() {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://www.drapaulaandrade.com.br#website',
-    url: 'https://www.drapaulaandrade.com.br',
+    '@id': `${baseUrl}#website`,
+    url: baseUrl,
     name: 'Dra. Paula Andrade - Pediatra em Pinheiros',
     description: 'Pediatra em Pinheiros especializada em pediatria humanizada e integrativa. Consultas e acompanhamento para crianças de 0 a 12 anos.',
     publisher: {
       '@type': 'Organization',
-      '@id': 'https://www.drapaulaandrade.com.br#organization',
+      '@id': `${baseUrl}#organization`,
       name: 'Dra. Paula Andrade - Pediatria',
-      url: 'https://www.drapaulaandrade.com.br',
+      url: baseUrl,
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.drapaulaandrade.com.br/logo.png',
+        url: `${baseUrl}/logo.png`,
       },
     },
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://www.drapaulaandrade.com.br/search?q={search_term_string}',
+        urlTemplate: `${baseUrl}/search?q={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
     },
