@@ -44,7 +44,7 @@ export default function StructuredData() {
       },
     ],
     sameAs: [
-      'https://www.instagram.com/dra_paulandradeped',
+      'https://www.instagram.com/dra_paulaandradeped/',
     ],
   }
 
@@ -175,7 +175,7 @@ export default function StructuredData() {
       reviewCount: '127',
     },
     sameAs: [
-      'https://www.instagram.com/dra_paulandradeped',
+      'https://www.instagram.com/dra_paulaandradeped/',
     ],
     potentialAction: {
       '@type': 'ReserveAction',

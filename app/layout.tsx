@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import StructuredData from '@/components/StructuredData'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import './globals.css'
 
 const inter = Inter({
@@ -107,6 +108,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
+        <GoogleAnalytics />
         {children}
         <StructuredData />
       </body>
