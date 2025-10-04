@@ -367,7 +367,7 @@ export default function Home() {
                   Tudo que você precisa saber sobre introdução alimentar: quando começar, sinais de prontidão, BLW vs tradicional, alergias e muito mais.
                 </p>
                 <Link
-                  href="/drapaulaped/blog/introducao-alimentar-guia-completo"
+                  href="/blog/introducao-alimentar-guia-completo"
                   className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium group"
                 >
                   Ler artigo completo
@@ -394,7 +394,7 @@ export default function Home() {
                   Pega correta, produção de leite, mitos e verdades. Tudo que você precisa saber para começar a amamentar com confiança.
                 </p>
                 <Link
-                  href="/drapaulaped/blog/amamentacao-primeiros-dias"
+                  href="/blog/amamentacao-primeiros-dias"
                   className="inline-flex items-center gap-2 text-secondary-600 hover:text-secondary-700 font-medium group"
                 >
                   Ler artigo completo
@@ -421,7 +421,7 @@ export default function Home() {
                   Entenda como a pediatria integrativa combina medicina baseada em evidências com práticas complementares para cuidar da criança como um todo.
                 </p>
                 <Link
-                  href="/drapaulaped/blog/pediatria-integrativa-o-que-e"
+                  href="/blog/pediatria-integrativa-o-que-e"
                   className="inline-flex items-center gap-2 text-accent-600 hover:text-accent-700 font-medium group"
                 >
                   Ler artigo completo
@@ -436,7 +436,7 @@ export default function Home() {
           {/* CTA to Blog */}
           <div className="text-center mt-12">
             <Link
-              href="/drapaulaped/blog"
+              href="/blog"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 active:scale-95"
             >
               Ver Todos os Artigos
@@ -509,7 +509,7 @@ export default function Home() {
               <ul className="space-y-2">
                 <li><a href="#sobre" className="text-neutral-300 hover:text-primary-400 transition-colors">Sobre</a></li>
                 <li><a href="#servicos" className="text-neutral-300 hover:text-primary-400 transition-colors">Serviços</a></li>
-                <li><Link href="/drapaulaped/blog" className="text-neutral-300 hover:text-primary-400 transition-colors">Blog</Link></li>
+                <li><Link href="/blog" className="text-neutral-300 hover:text-primary-400 transition-colors">Blog</Link></li>
                 <li><a href="#contato" className="text-neutral-300 hover:text-primary-400 transition-colors">Contato</a></li>
               </ul>
             </div>
