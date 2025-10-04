@@ -40,6 +40,22 @@ const testimonials: Testimonial[] = [
     text: 'Consultas sem pressa, atenção aos detalhes e muito carinho. Meu filho adora a Dra. Paula e eu confio de olhos fechados.',
     child: 'Pedro (3 anos)',
   },
+  {
+    id: 5,
+    name: 'Fernanda C.',
+    location: 'Perdizes',
+    rating: 5,
+    text: 'A Dra. Paula me ajudou com a amamentação quando eu estava quase desistindo. Com paciência e orientações práticas, conseguimos! Sou eternamente grata.',
+    child: 'Helena (4 meses)',
+  },
+  {
+    id: 6,
+    name: 'Carlos R.',
+    location: 'Pinheiros',
+    rating: 5,
+    text: 'Pediatra completa! Além do atendimento excelente, responde nossas dúvidas pelo WhatsApp. Faz toda a diferença ter essa segurança.',
+    child: 'Gustavo (1 ano)',
+  },
 ]
 
 export default function Testimonials() {
