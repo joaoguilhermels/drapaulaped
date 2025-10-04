@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
   },
   icons: {
-    icon: '/drapaulaped/favicon.svg',
-    apple: '/drapaulaped/favicon.svg',
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
   },
-  manifest: '/drapaulaped/manifest.json',
+  manifest: '/manifest.json',
   keywords: [
     'pediatra pinheiros',
     'pediatra em pinheiros',

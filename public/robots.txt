@@ -5,7 +5,7 @@ Allow: /
 Disallow: /api/
 
 # Allow static assets
-Allow: /drapaulaped/_next/static/
+Allow: /_next/static/
 Allow: /*.webp$
 Allow: /*.svg$
 Allow: /*.jpg$
@@ -15,4 +15,4 @@ Allow: /*.png$
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://joaoguilhermels.github.io/drapaulaped/sitemap.xml
+Sitemap: https://drapaulaped.com.br/sitemap.xml

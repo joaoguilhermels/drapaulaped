@@ -82,7 +82,7 @@ export default function Home() {
             <div className="relative hidden lg:block">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/drapaulaped/drapaulaandrade.webp"
+                  src="/drapaulaandrade.webp"
                   alt="Dra. Paula Andrade - Pediatra em Pinheiros"
                   width={800}
                   height={800}
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="relative lg:order-2">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
                 <Image
-                  src="/drapaulaped/drapaulaandrade-consultorio.jpg"
+                  src="/drapaulaandrade-consultorio.jpg"
                   alt="Consultório Dra. Paula Andrade - Pediatria Humanizada em Pinheiros"
                   width={800}
                   height={600}

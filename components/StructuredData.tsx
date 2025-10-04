@@ -147,7 +147,7 @@ export default function StructuredData() {
     priceRange: '$$',
     image: {
       '@type': 'ImageObject',
-      url: 'https://joaoguilhermels.github.io/drapaulaped/drapaulaandrade.webp',
+      url: 'https://drapaulaped.com.br/drapaulaandrade.webp',
     },
     address: {
       '@type': 'PostalAddress',

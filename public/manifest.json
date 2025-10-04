@@ -2,14 +2,14 @@
   "name": "Dra. Paula Andrade - Pediatria Humanizada",
   "short_name": "Dra. Paula Andrade",
   "description": "Pediatra em Pinheiros, São Paulo. Atendimento humanizado e integrativo para crianças de 0 a 12 anos.",
-  "start_url": "/drapaulaped/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0284c7",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/drapaulaped/favicon.svg",
+      "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
@@ -18,5 +18,5 @@
   "categories": ["health", "medical"],
   "lang": "pt-BR",
   "dir": "ltr",
-  "scope": "/drapaulaped/"
+  "scope": "/"
 }
