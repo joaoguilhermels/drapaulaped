@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import ObfuscatedEmail from '@/components/ObfuscatedEmail'
 import FAQ from '@/components/FAQ'
@@ -27,7 +28,7 @@ export default function Home() {
             {/* Content */}
             <div className="space-y-6 text-center lg:text-left">
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-                Pediatria Humanizada e Integrativa
+                Pediatria Humanizada e Integrativa em Pinheiros
               </h1>
               <p className="text-lg md:text-xl text-neutral-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Cuidado especializado e acolhedor para o desenvolvimento saudável do seu filho. Atendimento em Pinheiros, São Paulo.
@@ -80,10 +81,14 @@ export default function Home() {
             {/* Image */}
             <div className="relative hidden lg:block">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="/drapaulaped/drapaulaandrade.webp"
                   alt="Dra. Paula Andrade - Pediatra em Pinheiros"
+                  width={800}
+                  height={800}
                   className="w-full h-full object-cover"
+                  priority
+                  unoptimized
                 />
               </div>
 
@@ -310,10 +315,14 @@ export default function Home() {
             {/* Image */}
             <div className="relative lg:order-2">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
-                <img
+                <Image
                   src="/drapaulaped/drapaulaandrade-consultorio.jpg"
                   alt="Consultório Dra. Paula Andrade - Pediatria Humanizada em Pinheiros"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  unoptimized
                 />
               </div>
             </div>

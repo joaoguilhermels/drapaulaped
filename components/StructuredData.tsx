@@ -170,11 +170,28 @@ export default function StructuredData() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
+      bestRating: '5',
+      worstRating: '1',
       reviewCount: '127',
     },
     sameAs: [
       'https://www.instagram.com/dra_paulandradeped',
     ],
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://wa.me/5511954548113',
+        actionPlatform: [
+          'http://schema.org/DesktopWebPlatform',
+          'http://schema.org/MobileWebPlatform',
+        ],
+      },
+      result: {
+        '@type': 'Reservation',
+        name: 'Agendamento de Consulta Pediátrica',
+      },
+    },
   }
 
   // Website Schema
@@ -271,10 +288,12 @@ export default function StructuredData() {
           '@type': 'Person',
           name: 'Juliana M.',
         },
+        datePublished: '2025-09-15',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',
           bestRating: '5',
+          worstRating: '1',
         },
         reviewBody: 'Finalmente uma pediatra que escuta! A Dra. Paula respondeu todas as minhas dúvidas sobre introdução alimentar. Meu filho está comendo muito melhor.',
         itemReviewed: {
@@ -288,10 +307,12 @@ export default function StructuredData() {
           '@type': 'Person',
           name: 'Roberto P.',
         },
+        datePublished: '2025-08-22',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',
           bestRating: '5',
+          worstRating: '1',
         },
         reviewBody: 'Depois de 3 pediatras que não descobriam o problema do meu filho, a Dra. Paula fez avaliação integrativa completa. Hoje ele está 100%!',
         itemReviewed: {
@@ -305,10 +326,12 @@ export default function StructuredData() {
           '@type': 'Person',
           name: 'Amanda S.',
         },
+        datePublished: '2025-07-10',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',
           bestRating: '5',
+          worstRating: '1',
         },
         reviewBody: 'Não é só pediatra, é uma parceira da família. Sempre disponível, sempre atenciosa, sempre precisa no diagnóstico.',
         itemReviewed: {
@@ -322,10 +345,12 @@ export default function StructuredData() {
           '@type': 'Person',
           name: 'Mariana L.',
         },
+        datePublished: '2025-06-28',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',
           bestRating: '5',
+          worstRating: '1',
         },
         reviewBody: 'Consultas sem pressa, atenção aos detalhes e muito carinho. Meu filho adora a Dra. Paula e eu confio de olhos fechados.',
         itemReviewed: {
@@ -339,10 +364,12 @@ export default function StructuredData() {
           '@type': 'Person',
           name: 'Fernanda C.',
         },
+        datePublished: '2025-05-14',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',
           bestRating: '5',
+          worstRating: '1',
         },
         reviewBody: 'A Dra. Paula me ajudou com a amamentação quando eu estava quase desistindo. Com paciência e orientações práticas, conseguimos! Sou eternamente grata.',
         itemReviewed: {
@@ -356,10 +383,12 @@ export default function StructuredData() {
           '@type': 'Person',
           name: 'Carlos R.',
         },
+        datePublished: '2025-04-19',
         reviewRating: {
           '@type': 'Rating',
           ratingValue: '5',
           bestRating: '5',
+          worstRating: '1',
         },
         reviewBody: 'Pediatra completa! Além do atendimento excelente, responde nossas dúvidas pelo WhatsApp. Faz toda a diferença ter essa segurança.',
         itemReviewed: {
