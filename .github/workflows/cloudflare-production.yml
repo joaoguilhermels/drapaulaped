@@ -1,0 +1,58 @@
+name: Deploy to Cloudflare Pages (Production)
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+concurrency:
+  group: 'cloudflare-production'
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache
+          key: ${{ runner.os }}-nextjs-prod-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-prod-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for production
+        env:
+          CLOUDFLARE_ENV: production
+          NEXT_PUBLIC_SITE_URL: https://www.drapaulaped.com.br
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+          NEXT_PUBLIC_ENV: production
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: drapaulaped
+          directory: out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          wranglerVersion: '3'

@@ -52,7 +52,10 @@ export const metadata: Metadata = {
     email: true,
     address: true,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    'https://joaoguilhermels.github.io/drapaulaped'
+  ),
   alternates: {
     canonical: '/',
   },

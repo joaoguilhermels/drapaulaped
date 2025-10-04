@@ -1,4 +1,7 @@
 export default function StructuredData() {
+  // Get base URL from environment variable or fallback to production
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.drapaulaped.com.br'
+
   // Physician Schema
   const physicianSchema = {
     '@context': 'https://schema.org',
@@ -6,8 +9,8 @@ export default function StructuredData() {
     name: 'Dra. Paula Andrade',
     alternateName: 'Paula Andrade Pediatra',
     description: 'Pediatra com RQE 131771 especializada em pediatria humanizada e integrativa em Pinheiros, São Paulo. Título SBP 2024, pós-graduação Einstein. Atendimento para crianças de 0 a 12 anos.',
-    image: 'https://joaoguilhermels.github.io/drapaulaped/drapaulaandrade.webp',
-    url: 'https://www.drapaulaandrade.com.br',
+    image: `${baseUrl}/drapaulaandrade.webp`,
+    url: baseUrl,
     telephone: '+55-11-95454-8113',
     email: 'contato@drapaulaandrade.com.br',
     address: {
@@ -52,13 +55,13 @@ export default function StructuredData() {
   const medicalBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    '@id': 'https://www.drapaulaandrade.com.br',
+    '@id': baseUrl,
     name: 'Dra. Paula Andrade - Pediatria',
     description: 'Consultório de Pediatria Humanizada e Integrativa em Pinheiros, São Paulo. Dra. Paula Andrade, RQE 131771, título SBP 2024, pós-graduação Einstein. Atendimento especializado para crianças de 0 a 12 anos com 7 anos de experiência.',
-    url: 'https://www.drapaulaandrade.com.br',
-    logo: 'https://www.drapaulaandrade.com.br/logo.png',
+    url: baseUrl,
+    logo: `${baseUrl}/logo.png`,
     image: [
-      'https://joaoguilhermels.github.io/drapaulaped/drapaulaandrade.webp',
+      `${baseUrl}/drapaulaandrade.webp`,
     ],
     telephone: '+55-11-95454-8113',
     email: 'contato@drapaulaandrade.com.br',
