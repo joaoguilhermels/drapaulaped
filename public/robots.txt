@@ -3,10 +3,16 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
+
+# Allow static assets
+Allow: /drapaulaped/_next/static/
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.jpg$
+Allow: /*.png$
 
 # Crawl-delay to prevent server overload
 Crawl-delay: 1
 
-# Sitemap location (update when sitemap is created)
-# Sitemap: https://joaoguilhermels.github.io/drapaulaped/sitemap.xml
+# Sitemap location
+Sitemap: https://joaoguilhermels.github.io/drapaulaped/sitemap.xml

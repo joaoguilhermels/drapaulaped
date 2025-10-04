@@ -205,6 +205,171 @@ export default function StructuredData() {
     },
   }
 
+  // FAQPage Schema
+  const faqPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Quanto tempo dura uma consulta?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Entre 40 e 60 minutos. Acredito que consulta com pressa não é consulta. Preciso de tempo para conhecer seu filho, entender suas dúvidas e explicar tudo com calma.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Como funciona o retorno?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Retornos de até 15 dias após a primeira consulta não têm custo adicional. É importante garantir que tudo está indo bem e que você está segura com o tratamento.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Posso tirar dúvidas entre consultas?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sim! Meus pacientes têm acesso ao WhatsApp para dúvidas rápidas. Não precisa esperar a próxima consulta se algo te preocupar.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Atendem emergências?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Para emergências, oriento sempre buscar o pronto-socorro. Mas estou disponível para avaliar a situação e dar orientações iniciais via WhatsApp.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Qual a localização do consultório?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Atendo em Pinheiros, São Paulo, próximo ao metrô Fradique Coutinho. Envio o endereço completo no momento do agendamento.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Como funciona o agendamento?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Muito simples! Você me envia uma mensagem pelo WhatsApp (11) 95454-8113 e eu respondo em até 24h com os horários disponíveis. Geralmente consigo encaixar em 24-48h.',
+        },
+      },
+    ],
+  }
+
+  // Review Schemas
+  const reviewsSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Juliana M.',
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+        },
+        reviewBody: 'Finalmente uma pediatra que escuta! A Dra. Paula respondeu todas as minhas dúvidas sobre introdução alimentar. Meu filho está comendo muito melhor.',
+        itemReviewed: {
+          '@type': 'Physician',
+          name: 'Dra. Paula Andrade',
+        },
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Roberto P.',
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+        },
+        reviewBody: 'Depois de 3 pediatras que não descobriam o problema do meu filho, a Dra. Paula fez avaliação integrativa completa. Hoje ele está 100%!',
+        itemReviewed: {
+          '@type': 'Physician',
+          name: 'Dra. Paula Andrade',
+        },
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Amanda S.',
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+        },
+        reviewBody: 'Não é só pediatra, é uma parceira da família. Sempre disponível, sempre atenciosa, sempre precisa no diagnóstico.',
+        itemReviewed: {
+          '@type': 'Physician',
+          name: 'Dra. Paula Andrade',
+        },
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Mariana L.',
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+        },
+        reviewBody: 'Consultas sem pressa, atenção aos detalhes e muito carinho. Meu filho adora a Dra. Paula e eu confio de olhos fechados.',
+        itemReviewed: {
+          '@type': 'Physician',
+          name: 'Dra. Paula Andrade',
+        },
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Fernanda C.',
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+        },
+        reviewBody: 'A Dra. Paula me ajudou com a amamentação quando eu estava quase desistindo. Com paciência e orientações práticas, conseguimos! Sou eternamente grata.',
+        itemReviewed: {
+          '@type': 'Physician',
+          name: 'Dra. Paula Andrade',
+        },
+      },
+      {
+        '@type': 'Review',
+        author: {
+          '@type': 'Person',
+          name: 'Carlos R.',
+        },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: '5',
+          bestRating: '5',
+        },
+        reviewBody: 'Pediatra completa! Além do atendimento excelente, responde nossas dúvidas pelo WhatsApp. Faz toda a diferença ter essa segurança.',
+        itemReviewed: {
+          '@type': 'Physician',
+          name: 'Dra. Paula Andrade',
+        },
+      },
+    ],
+  }
+
   return (
     <>
       {/* Physician Schema */}
@@ -241,6 +406,18 @@ export default function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+
+      {/* FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
+
+      {/* Reviews Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
       />
     </>
   )
