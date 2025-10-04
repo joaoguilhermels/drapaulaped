@@ -336,6 +336,118 @@ export default function Home() {
       {/* Limited Availability Section */}
       <LimitedAvailability />
 
+      {/* Blog Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
+              Artigos e Conteúdos
+            </h2>
+            <p className="text-lg text-neutral-600">
+              Informações baseadas em evidências sobre desenvolvimento infantil, amamentação, alimentação e muito mais
+            </p>
+          </div>
+
+          {/* Blog Posts Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Article 1: Introdução Alimentar */}
+            <article className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-neutral-100">
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full">
+                    Alimentação
+                  </span>
+                  <span className="text-sm text-neutral-500">8 min</span>
+                </div>
+                <h3 className="font-display text-xl font-semibold text-neutral-900 mb-3 line-clamp-2">
+                  Introdução Alimentar: Guia Completo para Começar com Segurança
+                </h3>
+                <p className="text-neutral-600 mb-4 line-clamp-3">
+                  Tudo que você precisa saber sobre introdução alimentar: quando começar, sinais de prontidão, BLW vs tradicional, alergias e muito mais.
+                </p>
+                <Link
+                  href="/drapaulaped/blog/introducao-alimentar-guia-completo"
+                  className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium group"
+                >
+                  Ler artigo completo
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </Link>
+              </div>
+            </article>
+
+            {/* Article 2: Amamentação */}
+            <article className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-neutral-100">
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-700 text-xs font-semibold rounded-full">
+                    Amamentação
+                  </span>
+                  <span className="text-sm text-neutral-500">7 min</span>
+                </div>
+                <h3 className="font-display text-xl font-semibold text-neutral-900 mb-3 line-clamp-2">
+                  Amamentação nos Primeiros Dias: 7 Dicas Essenciais
+                </h3>
+                <p className="text-neutral-600 mb-4 line-clamp-3">
+                  Pega correta, produção de leite, mitos e verdades. Tudo que você precisa saber para começar a amamentar com confiança.
+                </p>
+                <Link
+                  href="/drapaulaped/blog/amamentacao-primeiros-dias"
+                  className="inline-flex items-center gap-2 text-secondary-600 hover:text-secondary-700 font-medium group"
+                >
+                  Ler artigo completo
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </Link>
+              </div>
+            </article>
+
+            {/* Article 3: Pediatria Integrativa */}
+            <article className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-neutral-100">
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="inline-block px-3 py-1 bg-accent-100 text-accent-700 text-xs font-semibold rounded-full">
+                    Pediatria
+                  </span>
+                  <span className="text-sm text-neutral-500">6 min</span>
+                </div>
+                <h3 className="font-display text-xl font-semibold text-neutral-900 mb-3 line-clamp-2">
+                  Pediatria Integrativa: O Que É e Como Funciona
+                </h3>
+                <p className="text-neutral-600 mb-4 line-clamp-3">
+                  Entenda como a pediatria integrativa combina medicina baseada em evidências com práticas complementares para cuidar da criança como um todo.
+                </p>
+                <Link
+                  href="/drapaulaped/blog/pediatria-integrativa-o-que-e"
+                  className="inline-flex items-center gap-2 text-accent-600 hover:text-accent-700 font-medium group"
+                >
+                  Ler artigo completo
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </Link>
+              </div>
+            </article>
+          </div>
+
+          {/* CTA to Blog */}
+          <div className="text-center mt-12">
+            <Link
+              href="/drapaulaped/blog"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 active:scale-95"
+            >
+              Ver Todos os Artigos
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <FAQ />
 
@@ -397,6 +509,7 @@ export default function Home() {
               <ul className="space-y-2">
                 <li><a href="#sobre" className="text-neutral-300 hover:text-primary-400 transition-colors">Sobre</a></li>
                 <li><a href="#servicos" className="text-neutral-300 hover:text-primary-400 transition-colors">Serviços</a></li>
+                <li><Link href="/drapaulaped/blog" className="text-neutral-300 hover:text-primary-400 transition-colors">Blog</Link></li>
                 <li><a href="#contato" className="text-neutral-300 hover:text-primary-400 transition-colors">Contato</a></li>
               </ul>
             </div>
